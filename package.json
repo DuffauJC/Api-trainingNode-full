@@ -1,0 +1,60 @@
+{
+  
+  "name": "api-trainingnode-full",
+  
+  "description": "Api version node.js de l'appli Training, gestion panier, login, admin....",
+  
+  "version": "1.0.0",
+  
+  "main": "app.js",
+  
+  "dependencies": {
+  
+    
+  "express": "^4.18.2",
+  
+    
+  "http-proxy-middleware": "^2.0.6"
+  
+  },
+  
+  "devDependencies": {
+  
+    
+  "nodemon": "^2.0.20"
+  
+  },
+  
+  "scripts": {
+  
+    
+  "test": "echo \"Error: no test specified\" && exit 1",
+  
+    
+  "start": "nodemon app.js"
+  
+  },
+  
+  "repository": {
+  
+    
+  "type": "git",
+  
+    
+  "url": "git+https://github.com/DuffauJC/Api-trainingNode-full.git"
+  
+  },
+  
+  "author": "JC-Duffau",
+  
+  "license": "ISC",
+  
+  "bugs": {
+  
+    
+  "url": "https://github.com/DuffauJC/Api-trainingNode-full/issues"
+  
+  },
+  
+  "homepage": "https://github.com/DuffauJC/Api-trainingNode-full#readme"
+}

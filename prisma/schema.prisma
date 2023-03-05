@@ -18,12 +18,60 @@ model Category {
 }
 
 model Training {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   description String
   imgurl      String
-  name String
-  price Int
-  quantity Int
-  Category   Category? @relation(fields: [category_id], references: [id])
+  name        String
+  price       Int
+  quantity    Int
+  Category    Category? @relation(fields: [category_id], references: [id])
   category_id String?   @db.ObjectId
+}
+
+model Customer {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  mail      String
+  password  String
+  name      String
+  firstName String
+  address   String
+  phone     String
+  role      String
+}
+
+model Orders {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  ordersId   Int
+  customerId Int
+  date       DateTime
+  amont      Float
+}
+
+model OrderItem {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  orderItemId Int
+  ordersId    Int
+  trainingId  Int
+  quantity    Int
+}
+
+model Role {
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  User_role User_role[]
+}
+
+model User {
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
+  username  String
+  email     String
+  password  String
+  User_role User_role[]
+}
+
+model User_role {
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String? @db.ObjectId
+  Role   Role?   @relation(fields: [roleId], references: [id])
+  roleId String? @db.ObjectId
 }
